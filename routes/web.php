@@ -28,6 +28,10 @@ Route::get('/dashboard/transactions','DashboardTransactionController@index')->na
 Route::get('/dashboard/transactions/{id}','DashboardTransactionController@details')->name('dashboard-transactions-details');
 Route::get('/dashboard/settings','DashboardSettingController@store')->name('dashboard-setting-store');
 Route::get('/dashboard/account','DashboardSettingController@account')->name('dashboard-setting-account');
+
+Route::prefix('admin')->namespace('Admin')->group(function(){
+    Route::get('/','DashboardController@index')->name('admin-dashboard');
+});
 Auth::routes();
 
 
