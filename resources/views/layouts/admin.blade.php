@@ -13,8 +13,8 @@
         @stack('prepend-style')
 
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-        <link href="/style/main.css" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.22/datatables.min.css"/>
+        <link href="/style/main.css" rel="stylesheet" />
 
         @stack('addon-style')
     </head>
@@ -30,7 +30,7 @@
             <div class="list-group list-group-flush">
                 <a
                 href="{{ route('admin-dashboard') }}"
-                class="list-group-item list-group-item-action active"
+                class="list-group-item list-group-item-action "
                 >Dashboard</a
                 >
                 <a
@@ -44,8 +44,8 @@
                 >Transactions</a
                 >
                 <a
-                href="/dashboard-settings.html"
-                class="list-group-item list-group-item-action"
+                href="{{ route('category.index') }}"
+                class="list-group-item list-group-item-action {{ (request()->is('admin/category*'))? 'active':'' }}"
                 >Categories</a
                 >
                 <a
