@@ -49,7 +49,7 @@
                 >Categories</a
                 >
                 <a
-                href="/dashboard-account.html"
+                href="{{ route('user.index') }}"
                 class="list-group-item list-group-item-action"
                 >User</a
                 >

@@ -23,7 +23,7 @@ class CategoryController extends Controller
     {
         if(request()->ajax()){
             $query = Category::query();
-            return Datatables::of($query)
+            return DataTables::of($query)
                 ->addColumn('action', function($item){
                     return 
                 '<div class="btn-group">
