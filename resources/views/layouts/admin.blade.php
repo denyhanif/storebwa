@@ -34,9 +34,9 @@
                 >Dashboard</a
                 >
                 <a
-                href="/dashboard-products.html"
-                class="list-group-item list-group-item-action"
-                > Products</a
+                href="{{ route('produk.index') }}"
+                class="list-group-item list-group-item-action {{ (request()->is('admin/produck*'))? 'active':'' }}"
+                >Produk</a
                 >
                 <a
                 href="/dashboard-transactions.html"
