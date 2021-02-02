@@ -55,7 +55,7 @@
                                             <div class="form-group">
                                                 <label>Kategori</label>
                                                 <select name="categories_id" class="form-control" required>
-                                                    <option value="{{ $item->category_id }}" selected>{{ $item->category->nama }}</option>
+                                                    <option value="{{ $item->categories_id }}" selected>{{ $item->category->nama }}</option>
 
                                                     @foreach ($category as $category)
                                                     <option value="{{ $category->id }}">{{ $category->nama }}</option>
