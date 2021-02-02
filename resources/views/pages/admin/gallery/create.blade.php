@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-   Admin buat kategori baru
+   Galeri Produk
 @endsection
 
 @section('content')
@@ -11,9 +11,9 @@
         >
             <div class="container-fluid">
                 <div class="dashboard-heading">
-                <h2 class="dashboard-title">Category</h2>
+                <h2 class="dashboard-title">Galeri</h2>
                 <p class="dashboard-subtitle">
-                    Buat kategori baru
+                    Buat Galeri
                 </p>
                 </div>
                 <div class="dashboard-content">
@@ -30,19 +30,23 @@
                         @endif
                         <div class="card">
                             <div class="card-body">
-                                <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('gallery.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Nama Kategori</label>
-                                                <input type="text" name="nama" class="form-control" required>
+                                                <label>Nama</label>
+                                                <select name="products_id" class="form-control" id="">
+                                                @foreach ($products as $product)
+                                                    <option value="{{ $product->id }}">{{ $product->name }}</option>
+                                                @endforeach
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="">Foto</label>
-                                                <input type="file" name="photo" class="form-control" required>
+                                                <input type="file" name="photos" class="form-control" required>
                                             </div>
                                         </div>
                                     </div>

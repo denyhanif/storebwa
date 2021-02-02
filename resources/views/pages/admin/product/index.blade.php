@@ -50,8 +50,8 @@
     <script>
         
         var datatable = $('#crudTable').DataTable({
-            processing: true,
-            serverSide: true,
+            processing: false,
+            serverSide: false,
             ordering: true,
             ajax:{
                 url:'{!! url()->current() !!}'

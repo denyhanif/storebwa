@@ -21,15 +21,14 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-body">
-                                <a href="{{ route('gallery.create') }}" class="btn btn-primary mb-3"> Tambah Kategori +</a>
+                                <a href="{{ route('gallery.create') }}" class="btn btn-primary mb-3"> Tambah Galery +</a>
                                 <div class="table-resposive">
-                                <table class="table table-hover scroll-horizontal-vertical w-100" id="crudTable">
+                                <table class="table table-hover table-responsive-sm scroll-horizontal-vertical w-100" id="crudTable">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Nama</th>
+                                            <th>Nama Produk</th>
                                             <th>Foto</th>
-                                            <th>Slug</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -57,9 +56,8 @@
             },
             columns:[
                 {data:'id', name:'id'},
-                {data:'nama', name:'nama'},
-                {data:'photo', name:'photo'},
-                {data:'slug', name:'slug'},
+                {data:'product.name', name:'product.name'},
+                {data:'photos', name:'photos'},
                 {data:'action', name:'action',orderable: false, searchable:false, width:'20%'},
              ],
         })

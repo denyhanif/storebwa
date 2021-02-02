@@ -34,6 +34,8 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
     Route::resource('category', 'CategoryController');
     Route::resource('user','UserController');
     Route::resource('produk','ProductController');
+    Route::resource('gallery','GalleryController');
+
     
 });
 Auth::routes();

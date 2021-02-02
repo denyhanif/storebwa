@@ -12,7 +12,7 @@ class Products extends Model
 
     //relasi
     public function galleries(){
-        return $this->hasMany(Gallery::class,'product_id','id');
+        return $this->hasMany(ProductsGalleries::class,'product_id','id');
     }
 
     public function users(){
