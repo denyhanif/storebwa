@@ -18,7 +18,11 @@ Route::get('/categories', 'CategoryController@index')->name('categories');
 Route::get('/categories/{id}', 'CategoryController@detail')->name('categories-detail');
 
 Route::get('/details/{id}', 'DetailController@index')->name('detail');
+Route::post('/details/{id}', 'DetailController@addChart')->name('detail-add');
+
+
 Route::get('/cart', 'CartController@index')->name('cart');
+Route::delete('/cart/{id}', 'CartController@delete')->name('cart-delete');
 Route::get('/success', 'CartController@success')->name('success');
 
 Route::get('/register/success','Auth\RegisterController@success')->name('register-success');

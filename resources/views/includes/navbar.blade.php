@@ -29,17 +29,54 @@
                     <li class="nav-item">
                     <a class="nav-link" href="#">Rewards</a>
                     </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="/register.html">Sign Up</a>
-                    </li>
-                    <li class="nav-item">
-                    <a
+                    
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">Sign Up</a>
+                        </li>
+                        <li class="nav-item">
+                        <a
                         class="btn btn-success nav-link px-4 text-white"
-                        href="/login.html"
+                        href="{{ route('login') }}"
                         >Sign In</a
-                    >
-                    </li>
+                        >
+                    @endguest
+                    
+                    </li>                  
                 </ul>
+                @auth
+                        <ul class="navbar-nav d-none d-lg-flex">
+                            <li class="nav-item dropdown">
+                            <a
+                                href="#"
+                                class="nav-link"
+                                id="navbarDropdown"
+                                role="button"
+                                data-toggle="dropdown"
+                            >
+                                <img
+                                src="/images/icon-user.png"
+                                alt=""
+                                class="rounded-circle mr-2 profile-picture"
+                                />
+                                Hi,   {{ Auth::user()->name }}
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="{{ route('dashboard') }}" class="dropdown-item">Dashboard</a>
+                                <a href="dashboard-setting-account" class="dropdown-item"
+                                >Settings</a
+                                >
+                                <div class="dropdown-divider"></div>
+                                <a href="{{ route('logout') }}" class="dropdown-item">Logout</a>
+                            </div>
+                            </li>
+                            <li class="nav-item">
+                            <a href="#" class="nav-link d-inline-block mt-2">
+                                <img src="/images/icon-cart-empty.svg" alt="" />
+                            </a>
+                            </li>
+                        </ul>
+                @endauth
                 </div>
             </div>
     </nav>
