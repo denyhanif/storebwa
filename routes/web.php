@@ -21,8 +21,6 @@ Route::get('/details/{id}', 'DetailController@index')->name('detail');
 Route::post('/details/{id}', 'DetailController@addChart')->name('detail-add');
 
 
-Route::get('/cart', 'CartController@index')->name('cart');
-Route::delete('/cart/{id}', 'CartController@delete')->name('cart-delete');
 Route::get('/success', 'CartController@success')->name('success');
 
 
@@ -34,14 +32,30 @@ Route::post('/checkout/callback', 'CheckoutController@callback')->name('midtrans
 
 
 Route::get('/register/success','Auth\RegisterController@success')->name('register-success');
+
+
+Route::group(['middleware'=>['auth']],function(){
+
+Route::get('/cart', 'CartController@index')->name('cart');
+Route::delete('/cart/{id}', 'CartController@delete')->name('cart-delete');
+
 Route::get('/dashboard','DashboardController@index')->name('dashboard');
 Route::get('/dashboard/products','DashboardProductController@index')->name('dashboard-product');
 Route::get('/dashboard/products/create','DashboardProductController@create')->name('dashboard-product-create');
 Route::get('/dashboard/products/{id}','DashboardProductController@details')->name('dashboard-product-details');
+Route::post('/dashboard/products/store','DashboardProductController@store')->name('dashboard-product-store');
+Route::post('/dashboard/products/{id}','DashboardProductController@update')->name('dashboard-product-update');
+
+Route::post('/dashboard/gallery/upload','DashboardProductController@uploadGallery')->name('dashboard-upload-gallery');
+Route::get('/dashboard/gallery/delete/{id}','DashboardProductController@deleteGallery')->name('dashboard-delete-gallery');
+
+
 Route::get('/dashboard/transactions','DashboardTransactionController@index')->name('dashboard-transaction');
 Route::get('/dashboard/transactions/{id}','DashboardTransactionController@details')->name('dashboard-transactions-details');
 Route::get('/dashboard/settings','DashboardSettingController@store')->name('dashboard-setting-store');
 Route::get('/dashboard/account','DashboardSettingController@account')->name('dashboard-setting-account');
+
+});
 
 Route::prefix('admin')->namespace('Admin')->group(function(){
     Route::get('/','DashboardController@index')->name('admin-dashboard');

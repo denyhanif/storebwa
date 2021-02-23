@@ -12,6 +12,7 @@ class CartController extends Controller
                 ->where('user_id',Auth::user()->id)
                 ->get();
         return view('pages.cart',['charts'=>$charts]);
+        dd($charts);
     }
 
     public function delete(Request $request,$id){

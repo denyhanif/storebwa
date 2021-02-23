@@ -77,7 +77,7 @@
                                 @endphp
                                 @if($carts>0)
                                     <img src="/images/icon-cart-filled.svg" alt="" />
- <div class="cart-badge">{{ $carts }}</div>                                @else
+                                <div class="cart-badge">{{ $carts }}</div>                                @else
                                     <img src="/image/icon-cart-empty.svg" alt="">
                                 @endif
                             </a>

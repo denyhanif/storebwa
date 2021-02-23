@@ -18,8 +18,19 @@
               </div>
               <div class="dashboard-content">
                 <div class="row">
+                  @if($errors->any())
+                  <div class="alert alert-danger">
+                    <ul>
+                      @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                      @endforeach
+                    </ul>
+                  </div>
+                  @endif
                   <div class="col-12">
-                    <form action="">
+                    <form action="{{ route('dashboard-product-store') }}" method="POST" enctype="multipart/form-data">
+                      @csrf
+                      <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                       <div class="card">
                         <div class="card-body">
                           <div class="row">
@@ -31,8 +42,8 @@
                                   class="form-control"
                                   id="name"
                                   aria-describedby="name"
-                                  name="storeName"
-                                  value="Papel La Casa"
+                                  value=""
+                                  name="name"
                                 />
                               </div>
                             </div>
@@ -45,19 +56,16 @@
                                   id="price"
                                   aria-describedby="price"
                                   name="price"
-                                  value="200"
                                 />
                               </div>
                             </div>
                             <div class="col-md-12">
                               <div class="form-group">
                                 <label for="category">Category</label>
-                                <select
-                                  name="category"
-                                  id="category"
-                                  class="form-control"
-                                >
-                                  <option value="Furniture">Furniture</option>
+                                <select name="categories_id"class="form-control">
+                                    @foreach ($categories as $item)
+                                    <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                                    @endforeach                                
                                 </select>
                               </div>
                             </div>
@@ -65,14 +73,13 @@
                               <div class="form-group">
                                 <label for="description">Description</label>
                                 <textarea
-                                  name="descrioption"
+                                  name="description"
                                   id=""
                                   cols="30"
                                   rows="4"
                                   class="form-control editor"
-                                >
-The Nike Air Max 720 SE goes bigger than ever before with Nike's tallest Air unit yet for unimaginable, all-day comfort. There's super breathable fabrics on the upper, while colours add a modern edge. Bring the past into the future with the Nike Air Max 2090, a bold look inspired by the DNA of the iconic Air Max 90. Brand-new Nike Air cushioning
-                                </textarea>
+                                >                                
+                              </textarea>
                               </div>
                             </div>
                             <div class="col-md-12">
@@ -84,7 +91,7 @@ The Nike Air Max 720 SE goes bigger than ever before with Nike's tallest Air uni
                                   class="form-control pt-1"
                                   id="thumbnails"
                                   aria-describedby="thumbnails"
-                                  name="thumbnails"
+                                  name="photos"
                                 />
                                 <small class="text-muted">
                                   Kamu dapat memilih lebih dari satu file

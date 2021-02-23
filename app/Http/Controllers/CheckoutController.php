@@ -48,6 +48,9 @@ class CheckoutController extends Controller
                 'code'=>$trx
             ]);
         }
+
+        //hapus cart
+        Chart::where('user_id', Auth::user()->id)->delete();
 // Set your Merchant Server Key
 Config::$serverKey = 'SB-Mid-server-PKYop-64YDmFYXDss9znh7L6';
 // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
