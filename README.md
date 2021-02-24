@@ -18,7 +18,7 @@ Yang saya pelajari dari kelas ini yaitu:
 - Implementasi package [indoregion](https://github.com/azishapidin/indoregion)
 
 
-### Premium Partners
+### Framework yang digunakan
 
 - **Laravel**
 - **Botstrap**
