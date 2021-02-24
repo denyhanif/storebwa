@@ -14,8 +14,10 @@ Yang saya pelajari dari kelas ini yaitu:
 - Membuat market place C2C
 - Mebuat ERD 
 - Slicing dari desain figma ke html
+- responsive web desain
 - Implementasi [Payment Gateway](https://github.com/Midtrans/midtrans-php)
 - Implementasi package [indoregion](https://github.com/azishapidin/indoregion)
+- deploymnet ke server
 
 
 ### Framework yang digunakan
