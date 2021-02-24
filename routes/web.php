@@ -51,9 +51,13 @@ Route::get('/dashboard/gallery/delete/{id}','DashboardProductController@deleteGa
 
 
 Route::get('/dashboard/transactions','DashboardTransactionController@index')->name('dashboard-transaction');
-Route::get('/dashboard/transactions/{id}','DashboardTransactionController@details')->name('dashboard-transactions-details');
+Route::get('/dashboard/transactions/detail/{id}','DashboardTransactionController@details')->name('dashboard-transaction-detail');
+Route::post('/dashboard/transactions/{id}','DashboardTransactionController@update')->name('dashboard-transactions-update');
 Route::get('/dashboard/settings','DashboardSettingController@store')->name('dashboard-setting-store');
 Route::get('/dashboard/account','DashboardSettingController@account')->name('dashboard-setting-account');
+//Route::get('/dashboard/account','DashboardSettingController@account')->name('dashboard-setting-account');
+
+Route::post('/dahboard/account/{redirect}','DashboardSettingController@update')->name('dashboard-setting-redirect');
 
 });
 

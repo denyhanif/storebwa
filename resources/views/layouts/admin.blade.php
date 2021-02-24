@@ -124,7 +124,7 @@
                     </li>
                     <li class="nav-item">
                     <a class="nav-link d-inline-block mt-2" href="#">
-                        <img src="/images/icon-cart-empty.svg" alt="" />
+                        <img src="{{asset('/images/icon-cart-empty.svg')}}" alt="" />
                     </a>
                     </li>
                 </ul>

@@ -1,6 +1,6 @@
     @extends('layouts.app')
     @section('title')
-        Store cart 
+        Keranjang Belanja 
     @endsection
 
     @section('content')
@@ -17,7 +17,7 @@
                     <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">
-                        Cart
+                        Keranjang Belanja
                     </li>
                     </ol>
                 </nav>
@@ -89,7 +89,7 @@
                 <hr />
                 </div>
                 <div class="col-12">
-                <h2 class="mb-4">Shipping Details</h2>
+                <h2 class="mb-4">Detail Pengiriman</h2>
                 </div>
             </div>
             <form action="{{ route('checkout') }}" method="POST" id="locations">
@@ -98,7 +98,7 @@
                 <div class="row mb-2" data-aos="fade-up" data-aos-delay="200">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="address_one">Address 1</label>
+                                <label for="address_one">Alamat 1</label>
                                 <input
                                 type="text"
                                 class="form-control"
@@ -111,7 +111,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="address_two">Address 2</label>
+                            <label for="address_two">Alamat 2</label>
                             <input
                             type="text"
                             class="form-control"
@@ -142,7 +142,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="zip_code">Postal Code</label>
+                            <label for="zip_code">Kode Pos</label>
                             <input
                             type="text"
                             class="form-control"
@@ -182,7 +182,7 @@
                     <hr />
                     </div>
                     <div class="col-12">
-                    <h2>Payment Informations</h2>
+                    <h2>Informasi Pembayaran</h2>
                     </div>
                 </div>
                 <div class="row" data-aos="fade-up" data-aos-delay="200">
@@ -192,11 +192,11 @@
                     </div>
                     <div class="col-4 col-md-3">
                     <div class="product-title">$0</div>
-                    <div class="product-subtitle">Product Insurance</div>
+                    <div class="product-subtitle">Asuransi</div>
                     </div>
                     <div class="col-4 col-md-2">
                     <div class="product-title">$0</div>
-                    <div class="product-subtitle">Ship to Jakarta</div>
+                    <div class="product-subtitle">Potongan</div>
                     </div>
                     <div class="col-4 col-md-2">
                     <div class="product-title text-success">${{ $total_price??'0' }}</div>
@@ -204,7 +204,7 @@
                     </div>
                     <div class="col-8 col-md-3">
                     <button type="submit"class="btn btn-success mt-4 px-4 btn-block">
-                        Checkout Now
+                        Bayar Sekarang
                     </button>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('title')
-    Store Setting
+    Setelan Toko
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
           >
             <div class="container-fluid">
               <div class="dashboard-heading">
-                <h2 class="dashboard-title">Store Settings</h2>
+                <h2 class="dashboard-title">Toko Settings</h2>
                 <p class="dashboard-subtitle">
                   Make store that profitable
                 </p>
@@ -19,7 +19,8 @@
               <div class="dashboard-content">
                 <div class="row">
                   <div class="col-12">
-                    <form action="">
+                    <form action="{{ route('dashboard-setting-redirect','dashboard-setting-store') }}" method="POST" enctype="multipart/form-data">
+                      @csrf
                       <div class="card">
                         <div class="card-body">
                           <div class="row">
@@ -30,9 +31,9 @@
                                   type="text"
                                   class="form-control"
                                   id="storeName"
-                                  aria-describedby="emailHelp"
-                                  name="storeName"
-                                  value="Papel La Casa"
+                                  aria-describedby=""
+                                  name="store_name"
+                                  value="{{ $user->store_name }}"
                                 />
                               </div>
                             </div>
@@ -41,12 +42,15 @@
                             <div class="col-md-6">
                               <div class="form-group">
                                 <label for="category">Category</label>
+                                <option value="{{ $user->categories_id }}">Tidak Diganti</option>
                                 <select
                                   name="category"
                                   id="category"
                                   class="form-control"
                                 >
-                                  <option value="Furniture">Furniture</option>
+                                @foreach ($categories as $item)
+                                 <option value="{{ $item->id }}">tetap {{ $item->nama }}</option>
+                                @endforeach
                                 </select>
                               </div>
                             </div>
@@ -54,7 +58,7 @@
                           <div class="row">
                             <div class="col-md-6">
                               <div class="form-group">
-                                <label for="is_store_open">Store Status</label>
+                                <label for="store_status">Store Status</label>
                                 <p class="text-muted">
                                   Apakah saat ini toko Anda buka?
                                 </p>
@@ -64,10 +68,10 @@
                                   <input
                                     class="custom-control-input"
                                     type="radio"
-                                    name="is_store_open"
+                                    name="store_status"
                                     id="openStoreTrue"
-                                    value="true"
-                                    checked
+                                    value="1"
+                                    {{ $user->store_status ==1 ? 'checked' :'' }}
                                   />
                                   <label
                                     class="custom-control-label"
@@ -81,9 +85,10 @@
                                   <input
                                     class="custom-control-input"
                                     type="radio"
-                                    name="is_store_open"
+                                    name="store_status"
                                     id="openStoreFalse"
-                                    value="false"
+                                    value="0"
+                                    {{ $user->store_status==0 || $user->store_status == NULL ?'checked' :'' }}
                                   />
                                   <label
                                     makasih

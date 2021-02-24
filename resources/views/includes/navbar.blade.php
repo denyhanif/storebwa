@@ -76,9 +76,9 @@
                                     $carts = \App\Chart::where('user_id',Auth::user()->id)->count();
                                 @endphp
                                 @if($carts>0)
-                                    <img src="/images/icon-cart-filled.svg" alt="" />
+                                    <img src="{{ asset('/images/icon-cart-filled.svg') }}" alt="" />
                                 <div class="cart-badge">{{ $carts }}</div>                                @else
-                                    <img src="/image/icon-cart-empty.svg" alt="">
+                                    <img src="{{asset('/images/icon-cart-empty.svg')}}" alt="">
                                 @endif
                             </a>
                             </li>

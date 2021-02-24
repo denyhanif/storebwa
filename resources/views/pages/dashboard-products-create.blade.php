@@ -43,7 +43,7 @@
                                   id="name"
                                   aria-describedby="name"
                                   value=""
-                                  name="name"
+                                  name="name" required
                                 />
                               </div>
                             </div>
@@ -55,14 +55,14 @@
                                   class="form-control"
                                   id="price"
                                   aria-describedby="price"
-                                  name="price"
+                                  name="price" required
                                 />
                               </div>
                             </div>
                             <div class="col-md-12">
                               <div class="form-group">
                                 <label for="category">Category</label>
-                                <select name="categories_id"class="form-control">
+                                <select name="categories_id"class="form-control" required>
                                     @foreach ($categories as $item)
                                     <option value="{{ $item->id }}">{{ $item->nama }}</option>
                                     @endforeach                                
@@ -71,8 +71,8 @@
                             </div>
                             <div class="col-md-12">
                               <div class="form-group">
-                                <label for="description">Description</label>
-                                <textarea
+                                <label for="description">Description </label>
+                                <textarea required
                                   name="description"
                                   id=""
                                   cols="30"
