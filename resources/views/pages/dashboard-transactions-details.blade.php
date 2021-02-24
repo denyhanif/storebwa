@@ -69,7 +69,7 @@
                           </div>
                         </div>
                         <div class="row">
-                          <form action="{{ route('dashboard-transactions-update',$transaction->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('dashboard-transactions-update',$transaction->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="col-12 mt-4">
                             <h5>
@@ -130,19 +130,11 @@
                                       <div class="product-title">
                                         Input Resi
                                       </div>
-                                      <input
-                                        class="form-control"
-                                        type="text"
-                                        name="resi"
-                                        id="openStoreTrue"
-                                        v-model="resi"
+                                      <input class="form-control"  type="text" name="resi" id="openStoreTrue" v-model="resi"
                                       />
                                     </div>
                                     <div class="col-md-2">
-                                      <button
-                                        type="submit"
-                                        class="btn btn-success btn-block mt-4"
-                                      >
+                                      <button type="submit" class="btn btn-success btn-block mt-4">
                                         Update Resi
                                       </button>
                                     </div>
@@ -153,15 +145,12 @@
                           </div>
                            <div class="row mt-4">
                             <div class="col-12 text-right">
-                            <button
-                              type="submit"
-                              class="btn btn-success btn-lg mt-4"
-                            >
+                            <button type="submit" class="btn btn-success btn-lg mt-4" >
                                  Save Now
                               </button>
-                  </div>
-                </div>
-                          </form>
+                            </div>
+                            </div>
+                        </form>
                           
                         </div>
                       </div>
