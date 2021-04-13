@@ -25,9 +25,9 @@
                 <li class="nav-item">
                 <a class="nav-link" href="{{ url('categories') }}">Categories</a>
                 </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Rewards</a>
-                </li>
+                {{-- <li class="nav-item">
+                <a class="nav-link" href="#">Rewardsat</a>
+                </li> --}}
             </ul>
             </div>
         </div>

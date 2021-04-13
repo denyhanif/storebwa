@@ -106,10 +106,10 @@
                         Hi,{{ Auth::user()->name }}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/index.html"
+                        <a class="dropdown-item" href="/"
                         >Back to Store</a
                         >
-                        <a class="dropdown-item" href="/dashboard-account.html"
+                        <a class="dropdown-item" href="dashboard-setting-account"
                         >Settings</a
                         >
                         <a href="{{ route('logout') }}" class="list-group-item list-group-item-action" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

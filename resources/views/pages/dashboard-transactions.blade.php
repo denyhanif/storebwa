@@ -1,3 +1,4 @@
+
 @extends('layouts.dashboard')
 
 @section('title')
@@ -33,7 +34,7 @@
             <div class="row mt-3">
               @foreach ($transactions as $transaction)
                  <div class="col-12 mt-2">
-                    <a class="card card-list d-block" href="{{ route('dashboard-transactions-details',$transaction->id) }}">
+                    <a class="card card-list d-block" href="{{ route('dashboard-transaction-detail',$transaction->id) }}">
                         <div class="card-body">
                             <div class="row">
                               <div class="col-md-1">
@@ -65,12 +66,11 @@
                 <div class="col-12 mt-2">
                   @foreach ($buyTransaction as $transaction)
                  <div class="col-12 mt-2">
-                    <a class="card card-list d-block" href="{{ route('dashboard-transactions-details',$transaction->id) }}">
+                    <a class="card card-list d-block" href="{{ route('dashboard-transaction-detail',$transaction->id) }}">
                         <div class="card-body">
                             <div class="row">
                               <div class="col-md-1">
                                 <img class="w-50" src="{{ Storage::url($transaction->product->galleries->first()->photos ?? '') }}" alt=""/>
-                               {{--  src="{{ Storage::url($transaction->product->galleries->first()->photos ?? '') }}"  --}}
                              
                               </div>
                               <div class="col-md-4">

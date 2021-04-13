@@ -22,9 +22,9 @@
             <li class="nav-item">
               <a href="/categories.html" class="nav-link">Categories</a>
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Rewards</a>
-            </li>
+            {{-- <li class="nav-item">
+              <a href="#" class="nav-link">Rewardss</a>
+            </li> --}}
           </ul>
 
           <!-- Desktop Menu -->
@@ -42,7 +42,7 @@
                   alt=""
                   class="rounded-circle mr-2 profile-picture"
                 />
-                Hi, Angga
+                Hi, {{ Auth::user()->name }}
               </a>
               <div class="dropdown-menu">
                 <a href="/dashboard.html" class="dropdown-item">Dashboard</a>
@@ -63,7 +63,7 @@
           <ul class="navbar-nav d-block d-lg-none">
             <li class="nav-item">
               <a href="#" class="nav-link">
-                Hi, Angga
+                Hi, {{ Auth::user()->name }}
               </a>
             </li>
             <li class="nav-item">

@@ -18,6 +18,7 @@ class isAdmin
     {
         if(Auth::user() && Auth::user()->roles == 'ADMIN'){
             return $next($request);
+            //return redirect()->route('admin-dashboard');
         }
         return redirect('/');//jika true di arahakan ke root
     }
