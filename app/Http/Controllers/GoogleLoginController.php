@@ -40,7 +40,7 @@ function createUser($getInfo,$provider){
         'provider' => $provider,
         'google_id' => $getInfo->id,
         'password'=>'password',
-        'roles'=>' USER'
+        'roles'=> 'USER'
     ]);
   }
   return $user;

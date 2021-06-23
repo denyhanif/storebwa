@@ -161,7 +161,7 @@
                     <hr>
 <div class="form-group row mb-0">
 <div class="col-md-8 offset-md-4">
-<a href="{{ url('/auth/redirect/google') }}" class="btn btn-primary"><i class="fa fa-google"></i> Google</a>
+<a href="{{ url('/auth/redirect/google') }}" class="btn btn-primary  btn-block mt-4"><i class="fa fa-google"></i> Google</a>
 </div>
 <hr>
 
@@ -209,7 +209,7 @@
                                 "Maaf, tampaknya email sudah terdaftar pada sistem kami.", {
                                     position: "top-center",
                                     className: "rounded",
-                                    duration: 1000,
+                                    duration: 5000,
                                 }
                             );
                             self.email_unavailable = true;
@@ -221,8 +221,8 @@
         },
         data() {
             return {
-                name: "Angga Hazza Sett",
-                email: "kamujagoan@bwa.id",
+                name: "",
+                email: "{{ old('email') }}",
                 is_store_open: true,
                 store_name: "",
                 email_unavailable: false

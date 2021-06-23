@@ -47,11 +47,12 @@
                                 Hi,   {{ Auth::user()->name }}
                             </a>
                             <div class="dropdown-menu">
-                                @if(Auth::user('ADMIN'))
+                                @if(Auth::user()->roles == 'ADMIN')
                                     <a href="{{ route('admin-dashboard') }}" class="dropdown-item">Dashboard Admin</a>
-                                @else(Auth::user('USER'))
+                                @endif
+                                @if(Auth::user()->roles == 'USER')
                                 
-                                    <a href="{{ route('dashboard') }}" class="dropdown-item">Dashboard</a>
+                                    <a href="{{ route('dashboard') }}" class="dropdown-item">Dashboard User</a>
 
                                 @endif
                                 <a href="dashboard-setting-account" class="dropdown-item"

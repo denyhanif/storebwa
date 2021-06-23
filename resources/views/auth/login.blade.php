@@ -51,6 +51,8 @@
                         >
                             Sign Up
                         </a>
+                        <a href="{{ url('/auth/redirect/google') }}" class="btn  btn-block w-75 mt-2 btn-primary"><i class="fa fa-google"></i> Google</a>
+
                     </form>
                 </div>
             </div>
